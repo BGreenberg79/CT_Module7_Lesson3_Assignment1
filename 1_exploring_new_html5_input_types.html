@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="forms assignment">
+    <meta name="keywords" content="forms, html">
+    <meta name="author" content="Benjamin Greenberg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey</title>
+</head>
+<body>
+    <form action="/survey" method="post">
+        <fieldset>
+            <!-- Task 1.1 Form input for email with placeholder, type validation, and label -->
+            <legend>Email Address</legend>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" aria-label="Email" placeholder="Enter your email here e.g. abc123@gmail.com" required>
+        </fieldset>
+        <fieldset>
+            <!-- Task 1.2 Form input for numeric value with min, max, and step attributes -->
+            <legend>Order Quantity</legend>
+
+            <label for="item-quantity">Quantity of Items Ordered</label>
+            <input type="number" id="item-quantity" name="item-quantity" aria-label="Item Quantity" min="1" max="100" step="1" placeholder="Quantity" required>
+        </fieldset>
+        <fieldset>
+            <!-- Task 1.3 Form input for date with label and placeholder -->
+            <legend>User Birthday</legend>
+
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday" aria-label="Birthday" placeholder="2006-08-14" required>
+        </fieldset>
+        <fieldset>
+            <!-- Task 1.4 Form input for range -->
+            <legend>User Product Rating</legend>
+
+            <label for="product-rating">Product Rating &#40;0 to 5 stars&#41;</label>
+            <input type="range" id="product-rating" name="product-rating" aria-label="Product Rating" min="0" max="5" step="0.1" value="4.0" required>
+        </fieldset>
+        <fieldset>
+            <!-- Task 1.5(bonus) Capturing color inputs -->
+            <legend>Custom Product Color Choice</legend>
+            
+            <label for="product-color">Custom Product Color</label>
+            <input type="color" id="product-color" name="product-color" aria-label="Custom Product Color" value="#DE1A1A" required>
+        </fieldset>
+        <fieldset>
+            <!-- Task 2.1 Select Menu, Checkboxes, and Radio Buttons -->
+            <legend>Favorite Programming Language</legend>
+
+            <label for="fav=programming-language">Select Your Favorite Programming Language</label>
+            <select id="fav-programming-language" name="fav-programming-language" aria-label="Select Your Favorite Programming Language" required>
+                <option value="python">Python</option>
+                <option value="html">HTML</option>
+                <option value="javascript">Javascript</option>
+                <option value="ruby">Ruby</option>
+                <option value="sql">SQL</option>
+                <option value="c">C</option>
+                <option value="c++">C++</option>
+            </select>
+            <fieldset>
+                <legend>Level of Expertise</legend>
+
+                <div>
+                <label for="beginner">Beginner</label>
+                <input type="radio" id="beginner" name="expertise-level" value="beginner" aria-label="Expertise Level &ndash; Beginner" required>
+                </div>
+
+                <div>
+                <label for="intermediate">Intermediate</label>
+                <input type="radio" id="intermediate" name="expertise-level" value="intermediate" aria-label="Expertise Level &ndash; Intermediate" required>
+                </div>
+
+                <div>
+                <label for="advanced">Advanced</label>
+                <input type="radio" id="advanced" name="expertise-level" value="advanced" aria-label="Expertise Level &ndash; Advanced" required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Preferred Platform</legend>
+                <div>
+                    <label for="mobile">Mobile</label>
+                    <input type="checkbox" id="mobile" name="preferred-platform" value="mobile" aria-label="Preferred Platform &ndash; Mobile">
+                </div>
+                <div>
+                    <label for="desktop">Desktop</label>
+                    <input type="checkbox" id="desktop" name="preferred-platform" value="desktop" aria-label="Preferred Platform &ndash; Desktop">
+                </div>
+                <div>
+                    <label for="web">Web</label>
+                    <input type="checkbox" id="web" name="preferred-platform" value="web" aria-label="Preferred Platform &ndash; Web">
+                </div>
+            </fieldset>
+        </fieldset>
+        <div role="alert" aria-live="assertive" id="error-message">Please be sure to fill out all fields.</div>
+        <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
